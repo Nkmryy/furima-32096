@@ -34,16 +34,17 @@
 - has_one :order
 
 ## addressesテーブル
-| Column        | Type       | Options     |
-| ------------- | ---------- | ----------- |
-| postal_code   | string     | null: false |
-| state_id      | integer    | null: false |
-| address       | string     | null: false |
-| street        | string     | null: false |
-| building      | string     |             |
-| phone         | string     | null: false |
+| Column        | Type       | Options           |
+| ------------- | ---------- | ----------------- |
+| postal_code   | string     | null: false       |
+| states_id     | integer    | null: false       |
+| address       | string     | null: false       |
+| street        | string     | null: false       |
+| building      | string     |                   |
+| phone         | string     | null: false       |
+| user          | references | foreign_key: true |
 ### Association
-- belongs_to :item
+- belongs_to :order
 
 ## ordersテーブル
 | Column | Type       | Options           |
