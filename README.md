@@ -42,7 +42,7 @@
 | street        | string     | null: false       |
 | building      | string     |                   |
 | phone         | string     | null: false       |
-| user          | references | foreign_key: true |
+| order         | references | foreign_key: true |
 ### Association
 - belongs_to :order
 
@@ -52,5 +52,7 @@
 | user   | references | foreign_key: true |
 | item   | references | foreign_key: true |
 ### Association
+- belongs_to :user
 - belongs_to :item
 - has_one :address
+
