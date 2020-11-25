@@ -18,17 +18,17 @@
 
 
 ## itemsテーブル
-| Column      | Type       | Options       |
-| ----------- | ---------- | ------------- |
-| item_name   | string     | null: false   |
-| description | text       | null: false   |
-| category    | integer    | null: false   |
-| states      | integer    | null: false   |
-| freight     | integer    | null: false   |
-| ship_state  | integer    | null: false   |
-| speed       | integer    | null: false   |
-| price       | integer    | null:false    |
-| user        | references |               |
+| Column        | Type       | Options       |
+| ------------- | ---------- | ------------- |
+| item_name     | string     | null: false   |
+| description   | text       | null: false   |
+| category_id   | integer    | null: false   |
+| states_id     | integer    | null: false   |
+| freight_id    | integer    | null: false   |
+| ship_state_id | integer    | null: false   |
+| speed_id      | integer    | null: false   |
+| price         | integer    | null:false    |
+| user          | references |               |
 ### Association
 - belongs_to :user
 - has_one :order
@@ -37,7 +37,7 @@
 | Column        | Type       | Options     |
 | ------------- | ---------- | ----------- |
 | postal_code   | string     | null: false |
-| state         | integer    | null: false |
+| state_id      | integer    | null: false |
 | address       | string     | null: false |
 | street        | string     | null: false |
 | building      | string     |             |
