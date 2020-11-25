@@ -2,16 +2,16 @@
 
 ## usersテーブル
 
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| email           | string | null: false |
-| password        | string | null: false |
-| nickname        | string | null: false |
-| first_name      | string | null: false |
-| last_name       | string | null: false |
-| first_name_kana | string | null: false |
-| last_name_kana  | string | null: false |
-| birth_date      | date   | null: false |
+| Column          | Type               | Options     |
+| --------------- | ------------------ | ----------- |
+| email           | encrypted_password | null: false |
+| password        | encrypted_password | null: false |
+| nickname        | string             | null: false |
+| first_name      | string             | null: false |
+| last_name       | string             | null: false |
+| first_name_kana | string             | null: false |
+| last_name_kana  | string             | null: false |
+| birth_date      | date               | null: false |
 ### Association
 - has_many :items
 - has_many :orders
@@ -22,31 +22,27 @@
 | ----------- | ---------- | ------------- |
 | item_name   | string     | null: false   |
 | description | text       | null: false   |
-| category    | string     | null: false   |
-| states      | string     | null: false   |
-| freight     | string     | null: false   |
-| ship_state  | string     | null: false   |
-| speed       | string     | null: false   |
-| image       |            | ActiveStorage |
-| user_id     | references |               |
-
+| category    | integer    | null: false   |
+| states      | integer    | null: false   |
+| freight     | integer    | null: false   |
+| ship_state  | integer    | null: false   |
+| speed       | integer    | null: false   |
+| price       | integer    | null:false    |
+| user        | references |               |
 ### Association
 - belongs_to :user
 - has_one :order
 
 ## ordersテーブル
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| card_number   | integer | null: false |
-| exp_month     | integer | null: false |
-| exp_year      | integer | null: false |
-| approval_code | integer | null: false |
-| postal_code   | integer | null: false |
-| state         | string  | null: false |
-| address       | string  | null: false |
-| street        | string  | null: false |
-| building      | string  |             |
-| phone         | integer | null: false |
+| Column        | Type       | Options     |
+| ------------- | ---------- | ----------- |
+| postal_code   | string     | null: false |
+| state         | integer    | null: false |
+| address       | string     | null: false |
+| street        | string     | null: false |
+| building      | string     |             |
+| phone         | string     | null: false |
+| user          | references |             |
 ### Association
 -belongs_to :user
 -belongs_to :item
