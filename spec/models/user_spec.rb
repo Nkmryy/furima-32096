@@ -111,6 +111,7 @@ describe User do
         @user.birth_date = ""
         @user.valid?
         expect(@user.errors.full_messages).to include "Birth date can't be blank"
+      end
     end
   end
 end
