@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(version: 2020_11_27_031300) do
     t.integer "ship_day_id", null: false
     t.integer "price", null: false
     t.bigint "user_id"
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_items_on_order_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 

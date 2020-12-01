@@ -29,6 +29,7 @@
 | ship_days_id  | integer    | null: false       |
 | price         | integer    | null:false        |
 | user          | references | foreign_key: true |
+| oder          | references |                   |
 ### Association
 - belongs_to :user
 - has_one :order
