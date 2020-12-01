@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
@@ -16,4 +17,6 @@ class User < ApplicationRecord
     validates :first_name_kana
     validates :last_name_kana
   end
+
+  has_many :items
 end
