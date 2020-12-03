@@ -9,7 +9,6 @@ class Item < ApplicationRecord
   belongs_to :ship_state
   belongs_to :ship_day
 
-  validates :name, presence: true
   with_options presence: true do
     validates :name
     validates :description
