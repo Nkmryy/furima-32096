@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :status
   belongs_to :freight
-  belongs_to :ship_state
+  belongs_to :state
   belongs_to :ship_day
 
   with_options presence: true do
@@ -19,7 +19,7 @@ class Item < ApplicationRecord
       validates :category_id
       validates :status_id
       validates :freight_id
-      validates :ship_state_id
+      validates :state_id
       validates :ship_day_id
     end
   end

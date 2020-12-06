@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_023204) do
     t.integer "state_id", null: false
     t.string "address", null: false
     t.string "street", null: false
-    t.string "buillding"
+    t.string "building"
     t.string "phone", null: false
     t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_023204) do
     t.integer "category_id", null: false
     t.integer "status_id", null: false
     t.integer "freight_id", null: false
-    t.integer "ship_state_id", null: false
+    t.integer "state_id", null: false
     t.integer "ship_day_id", null: false
     t.integer "price", null: false
     t.bigint "user_id"
