@@ -7,7 +7,7 @@ class OrderAddress
     validates :state_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :address
     validates :street
-    validates :phone, numericality: {with: /\A[0-9]{,11}\z/, message: "is invalid. In 11 digits or less"}
+    validates :phone, format: {with: /\A[0-9]{,11}\z/, message: "is invalid. In 11 digits or less"}
     validates :token
     validates :price
   end
