@@ -46,7 +46,6 @@ RSpec.describe OrderAddress, type: :model do
   it 'phoneが11桁以上だと保存できないこと' do
     @order_address.phone = '012345678901'
     @order_address.valid?
-    expect(@order_address.errors.full_messages).to include('Phone is invalid. In 11 digits or less')
     expect(@order_address.errors.full_messages).to include('Phone is invalid. In 11 digits or less numbers')
   end
   it 'phoneに数字以外の文字列が含まれている場合購入できない' do
