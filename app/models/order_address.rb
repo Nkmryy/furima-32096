@@ -10,6 +10,8 @@ class OrderAddress
     validates :phone, format: { with: /\A[0-9]{,11}\z/, message: 'is invalid. In 11 digits or less' }
     validates :token
     validates :price
+    validates :item_id
+    validates :user_id
   end
 
   def save
