@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user).order(created_at: "DESC")
+    @orders = Order.includes(:item)
   end
 
   def new
@@ -31,7 +32,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @item.user_id
+    if @order.present? || current_user.id != @item.user_id
       redirect_to root_path
     end
   end
@@ -54,5 +55,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    @order = Order.find_by(item_id: @item.id)
   end
 end
