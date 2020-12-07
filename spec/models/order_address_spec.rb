@@ -47,6 +47,12 @@ RSpec.describe OrderAddress, type: :model do
     @order_address.phone = '012345678901'
     @order_address.valid?
     expect(@order_address.errors.full_messages).to include('Phone is invalid. In 11 digits or less')
+    expect(@order_address.errors.full_messages).to include('Phone is invalid. In 11 digits or less numbers')
+  end
+  it 'phoneに数字以外の文字列が含まれている場合購入できない' do
+    @order_address.phone = 'abc00000000'
+    @order_address.valid?
+    expect(@order_address.errors.full_messages).to include('Phone is invalid. In 11 digits or less numbers')
   end
   it 'tokenが空だと保存できないこと' do
     @order_address.token = nil
@@ -57,5 +63,15 @@ RSpec.describe OrderAddress, type: :model do
     @order_address.price = nil
     @order_address.valid?
     expect(@order_address.errors.full_messages).to include("Price can't be blank")
+  end
+  it 'user_idが空だと保存できないこと' do
+    @order_address.user_id = nil
+    @order_address.valid?
+    expect(@order_address.errors.full_messages).to include("User can't be blank")
+  end
+  it 'item_idが空だと保存できないこと' do
+    @order_address.item_id = nil
+    @order_address.valid?
+    expect(@order_address.errors.full_messages).to include("Item can't be blank")
   end
 end

@@ -8,5 +8,7 @@ FactoryBot.define do
     street { '１−１−１' }
     building { 'hoge' }
     phone { '09000000000' }
+    user_id { 1 }
+    item_id { 1 }
   end
 end
