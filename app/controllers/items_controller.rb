@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
-    @items = Item.includes(:user).order(created_at: "DESC")
+    @items = Item.includes(:user).order(created_at: 'DESC')
     @orders = Order.includes(:item)
   end
 
@@ -32,9 +32,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if @order.present? || current_user.id != @item.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path if @order.present? || current_user.id != @item.user_id
   end
 
   def update
@@ -49,6 +47,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:image, :name, :description, :price, :category_id, :status_id, :freight_id, :state_id, :ship_day_id).merge(user_id: current_user.id)
   end
