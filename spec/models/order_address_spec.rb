@@ -26,6 +26,11 @@ RSpec.describe OrderAddress, type: :model do
     @order_address.valid?
     expect(@order_address.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
   end
+  it 'state_idが空だとと保存できないこと' do
+    @order_address.state_id = nil
+    @order_address.valid?
+    expect(@order_address.errors.full_messages).to include("State can't be blank")
+  end
   it 'state_idを選択していないと保存できないこと' do
     @order_address.state_id = 1
     @order_address.valid?
