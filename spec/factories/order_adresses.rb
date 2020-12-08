@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :order_address do
-    price { 3000 }
     token { 'tok_abcdefghijk00000000000000000' }
     postal_code { '123-4567' }
     state_id { 2 }
@@ -8,7 +7,8 @@ FactoryBot.define do
     street { '１−１−１' }
     building { 'hoge' }
     phone { '09000000000' }
-    user_id { 1 }
-    item_id { 1 }
+
+    association :user
+    association :item
   end
 end

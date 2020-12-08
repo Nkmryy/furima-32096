@@ -87,13 +87,13 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@item.errors.full_messages).to include 'Freight must be other than 1'
         end
-        it 'ship_state_idが空では出品できない' do
-          @item.ship_state_id = nil
+        it 'state_idが空では出品できない' do
+          @item.state_id = nil
           @item.valid?
           expect(@item.errors.full_messages).to include "Ship state can't be blank"
         end
-        it 'ship_state_idが１の場合は出品できない' do
-          @item.ship_state_id = 1
+        it 'state_idが１の場合は出品できない' do
+          @item.state_id = 1
           @item.valid?
           expect(@item.errors.full_messages).to include 'Ship state must be other than 1'
         end
