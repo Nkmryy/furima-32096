@@ -25,7 +25,7 @@
 | category_id   | integer    | null: false       |
 | status_id     | integer    | null: false       |
 | freight_id    | integer    | null: false       |
-| ship_state_id | integer    | null: false       |
+| state_id      | integer    | null: false       |
 | ship_days_id  | integer    | null: false       |
 | price         | integer    | null:false        |
 | user          | references | foreign_key: true |
@@ -37,7 +37,7 @@
 | Column        | Type       | Options           |
 | ------------- | ---------- | ----------------- |
 | postal_code   | string     | null: false       |
-| states_id     | integer    | null: false       |
+| state_id     | integer    | null: false       |
 | address       | string     | null: false       |
 | street        | string     | null: false       |
 | building      | string     |                   |
